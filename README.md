@@ -1,12 +1,14 @@
 # Aldune: California wage-and-hour audit workflow
 
+[![tests](https://github.com/Ethanjordanschwartz/Aldune/actions/workflows/tests.yml/badge.svg)](https://github.com/Ethanjordanschwartz/Aldune/actions/workflows/tests.yml)
+
 **A legal-engineering portfolio project by Ethan Schwartz, a California attorney.**
 
 Aldune turns a California wage-and-hour and PAGA audit into a workflow you can repeat. That kind of audit is normally weeks of attorney time in spreadsheets. Aldune reads messy payroll and timekeeping records, including scanned and handwritten timecards. It tests them against versioned rules built from the Labor Code and the PAGA statute. Then it produces findings, exposure estimates, and the documents to fix what it finds.
 
 The organizing principle: **AI reads and explains, versioned rules decide, and a person confirms.**
 
-**Try it:** download [`demo/index.html`](demo/index.html) and open it in any browser, or use the hosted copy linked in this repo's About section. The demo is one HTML file that runs entirely in your browser; nothing is uploaded. To get full access, sign in with `demo@aldune.dev` / `AlduneDemo2026`, then click **Load demo company**. All data in the demo is fictional.
+**[Try the live demo →](https://ethanjordanschwartz.github.io/Aldune/demo/)** (or download [`demo/index.html`](demo/index.html) and open it in any browser). The demo is one HTML file that runs entirely in your browser; nothing is uploaded. To get full access, sign in with `demo@aldune.dev` / `AlduneDemo2026`, then click **Load demo company**. All data in the demo is fictional.
 
 ---
 
