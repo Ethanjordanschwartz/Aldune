@@ -1,0 +1,185 @@
+﻿Employee,Employee ID,Punch Date,Punch Time,Punch Type
+Maria Garcia,00123,2026-03-02,07:00,In
+Maria Garcia,00123,2026-03-02,11:00,Meal Out
+Maria Garcia,00123,2026-03-02,11:21,Meal In
+Maria Garcia,00123,2026-03-02,15:30,Out
+Maria Garcia,00123,2026-03-03,07:07,In
+Maria Garcia,00123,2026-03-03,11:44,Meal Out
+Maria Garcia,00123,2026-03-03,12:15,Meal In
+Maria Garcia,00123,2026-03-03,15:48,Out
+Maria Garcia,00123,2026-03-04,07:14,In
+Maria Garcia,00123,2026-03-04,12:28,Meal Out
+Maria Garcia,00123,2026-03-04,12:58,Meal In
+Maria Garcia,00123,2026-03-04,16:06,Out
+Maria Garcia,00123,2026-03-05,07:21,In
+Maria Garcia,00123,2026-03-05,11:21,Meal Out
+Maria Garcia,00123,2026-03-05,11:52,Meal In
+Maria Garcia,00123,2026-03-05,16:24,Out
+Maria Garcia,00123,2026-03-06,07:28,In
+Maria Garcia,00123,2026-03-06,12:05,Meal Out
+Maria Garcia,00123,2026-03-06,12:26,Meal In
+Maria Garcia,00123,2026-03-06,16:42,Out
+Maria Garcia,00123,2026-03-09,07:35,In
+Maria Garcia,00123,2026-03-09,13:05,Out
+Maria Garcia,00123,2026-03-10,07:42,In
+Maria Garcia,00123,2026-03-10,11:42,Meal Out
+Maria Garcia,00123,2026-03-10,12:12,Meal In
+Maria Garcia,00123,2026-03-10,16:23,Out
+Maria Garcia,00123,2026-03-11,07:49,In
+Maria Garcia,00123,2026-03-11,12:26,Meal Out
+Maria Garcia,00123,2026-03-11,12:57,Meal In
+Maria Garcia,00123,2026-03-11,16:41,Out
+Maria Garcia,00123,2026-03-12,07:56,In
+Maria Garcia,00123,2026-03-12,13:10,Meal Out
+Maria Garcia,00123,2026-03-12,13:31,Meal In
+Maria Garcia,00123,2026-03-12,16:59,Out
+Maria Garcia,00123,2026-03-13,08:03,In
+Maria Garcia,00123,2026-03-13,12:03,Meal Out
+Maria Garcia,00123,2026-03-13,12:34,Meal In
+Maria Garcia,00123,2026-03-13,17:17,Out
+John O'Neil,00456,2026-03-02,08:10,In
+John O'Neil,00456,2026-03-02,12:47,Meal Out
+John O'Neil,00456,2026-03-02,13:17,Meal In
+John O'Neil,00456,2026-03-02,16:40,Out
+John O'Neil,00456,2026-03-03,08:17,In
+John O'Neil,00456,2026-03-03,13:47,Out
+John O'Neil,00456,2026-03-04,08:24,In
+John O'Neil,00456,2026-03-04,12:24,Meal Out
+John O'Neil,00456,2026-03-04,12:45,Meal In
+John O'Neil,00456,2026-03-04,17:16,Out
+John O'Neil,00456,2026-03-05,08:31,In
+John O'Neil,00456,2026-03-05,13:08,Meal Out
+John O'Neil,00456,2026-03-05,13:39,Meal In
+John O'Neil,00456,2026-03-05,17:34,Out
+John O'Neil,00456,2026-03-06,07:03,In
+John O'Neil,00456,2026-03-06,12:17,Meal Out
+John O'Neil,00456,2026-03-06,12:47,Meal In
+John O'Neil,00456,2026-03-06,16:17,Out
+John O'Neil,00456,2026-03-09,07:10,In
+John O'Neil,00456,2026-03-09,11:10,Meal Out
+John O'Neil,00456,2026-03-09,11:41,Meal In
+John O'Neil,00456,2026-03-09,15:40,Out
+John O'Neil,00456,2026-03-10,07:17,In
+John O'Neil,00456,2026-03-10,11:54,Meal Out
+John O'Neil,00456,2026-03-10,12:15,Meal In
+John O'Neil,00456,2026-03-10,15:58,Out
+John O'Neil,00456,2026-03-11,07:24,In
+John O'Neil,00456,2026-03-11,12:54,Out
+John O'Neil,00456,2026-03-12,07:31,In
+John O'Neil,00456,2026-03-12,11:31,Meal Out
+John O'Neil,00456,2026-03-12,12:01,Meal In
+John O'Neil,00456,2026-03-12,16:34,Out
+John O'Neil,00456,2026-03-13,07:38,In
+John O'Neil,00456,2026-03-13,12:15,Meal Out
+John O'Neil,00456,2026-03-13,12:46,Meal In
+John O'Neil,00456,2026-03-13,16:52,Out
+Anh Le,00789,2026-03-02,07:45,In
+Anh Le,00789,2026-03-02,12:59,Meal Out
+Anh Le,00789,2026-03-02,13:20,Meal In
+Anh Le,00789,2026-03-02,16:15,Out
+Anh Le,00789,2026-03-03,07:52,In
+Anh Le,00789,2026-03-03,11:52,Meal Out
+Anh Le,00789,2026-03-03,12:23,Meal In
+Anh Le,00789,2026-03-03,16:33,Out
+Anh Le,00789,2026-03-04,07:59,In
+Anh Le,00789,2026-03-04,12:36,Meal Out
+Anh Le,00789,2026-03-04,13:06,Meal In
+Anh Le,00789,2026-03-04,16:51,Out
+Anh Le,00789,2026-03-05,08:06,In
+Anh Le,00789,2026-03-05,13:36,Out
+Anh Le,00789,2026-03-06,08:13,In
+Anh Le,00789,2026-03-06,12:13,Meal Out
+Anh Le,00789,2026-03-06,12:34,Meal In
+Anh Le,00789,2026-03-06,17:27,Out
+Anh Le,00789,2026-03-09,08:20,In
+Anh Le,00789,2026-03-09,12:57,Meal Out
+Anh Le,00789,2026-03-09,13:28,Meal In
+Anh Le,00789,2026-03-09,16:50,Out
+Anh Le,00789,2026-03-10,08:27,In
+Anh Le,00789,2026-03-10,13:41,Meal Out
+Anh Le,00789,2026-03-10,14:11,Meal In
+Anh Le,00789,2026-03-10,17:08,Out
+Anh Le,00789,2026-03-11,08:34,In
+Anh Le,00789,2026-03-11,12:34,Meal Out
+Anh Le,00789,2026-03-11,13:05,Meal In
+Anh Le,00789,2026-03-11,17:26,Out
+Anh Le,00789,2026-03-12,07:06,In
+Anh Le,00789,2026-03-12,11:43,Meal Out
+Anh Le,00789,2026-03-12,12:04,Meal In
+Anh Le,00789,2026-03-12,16:09,Out
+Anh Le,00789,2026-03-13,07:13,In
+Anh Le,00789,2026-03-13,12:43,Out
+DeShawn Brooks,01011,2026-03-02,07:20,In
+DeShawn Brooks,01011,2026-03-02,11:20,Meal Out
+DeShawn Brooks,01011,2026-03-02,11:50,Meal In
+DeShawn Brooks,01011,2026-03-02,15:50,Out
+DeShawn Brooks,01011,2026-03-03,07:27,In
+DeShawn Brooks,01011,2026-03-03,12:04,Meal Out
+DeShawn Brooks,01011,2026-03-03,12:35,Meal In
+DeShawn Brooks,01011,2026-03-03,16:08,Out
+DeShawn Brooks,01011,2026-03-04,07:34,In
+DeShawn Brooks,01011,2026-03-04,12:48,Meal Out
+DeShawn Brooks,01011,2026-03-04,13:09,Meal In
+DeShawn Brooks,01011,2026-03-04,16:26,Out
+DeShawn Brooks,01011,2026-03-05,07:41,In
+DeShawn Brooks,01011,2026-03-05,11:41,Meal Out
+DeShawn Brooks,01011,2026-03-05,12:12,Meal In
+DeShawn Brooks,01011,2026-03-05,16:44,Out
+DeShawn Brooks,01011,2026-03-06,22:00,In
+DeShawn Brooks,01011,2026-03-07,02:00,Meal Out
+DeShawn Brooks,01011,2026-03-07,02:31,Meal In
+DeShawn Brooks,01011,2026-03-07,06:15,Out
+DeShawn Brooks,01011,2026-03-09,07:55,In
+DeShawn Brooks,01011,2026-03-09,13:25,Out
+DeShawn Brooks,01011,2026-03-10,08:02,In
+DeShawn Brooks,01011,2026-03-10,12:02,Meal Out
+DeShawn Brooks,01011,2026-03-10,12:23,Meal In
+DeShawn Brooks,01011,2026-03-10,16:43,Out
+DeShawn Brooks,01011,2026-03-11,08:09,In
+DeShawn Brooks,01011,2026-03-11,12:46,Meal Out
+DeShawn Brooks,01011,2026-03-11,13:17,Meal In
+DeShawn Brooks,01011,2026-03-11,17:01,Out
+DeShawn Brooks,01011,2026-03-12,08:16,In
+DeShawn Brooks,01011,2026-03-12,13:30,Meal Out
+DeShawn Brooks,01011,2026-03-12,14:00,Meal In
+DeShawn Brooks,01011,2026-03-12,17:19,Out
+DeShawn Brooks,01011,2026-03-13,08:23,In
+DeShawn Brooks,01011,2026-03-13,12:23,Meal Out
+DeShawn Brooks,01011,2026-03-13,12:54,Meal In
+DeShawn Brooks,01011,2026-03-13,17:37,Out
+Pat Smith-Jones,01200,2026-03-02,08:30,In
+Pat Smith-Jones,01200,2026-03-02,13:07,Meal Out
+Pat Smith-Jones,01200,2026-03-02,13:28,Meal In
+Pat Smith-Jones,01200,2026-03-02,17:00,Out
+Pat Smith-Jones,01200,2026-03-03,07:02,In
+Pat Smith-Jones,01200,2026-03-03,12:32,Out
+Pat Smith-Jones,01200,2026-03-04,07:09,In
+Pat Smith-Jones,01200,2026-03-04,11:09,Meal Out
+Pat Smith-Jones,01200,2026-03-04,11:39,Meal In
+Pat Smith-Jones,01200,2026-03-04,16:01,Out
+Pat Smith-Jones,01200,2026-03-05,07:16,In
+Pat Smith-Jones,01200,2026-03-05,11:53,Meal Out
+Pat Smith-Jones,01200,2026-03-05,12:24,Meal In
+Pat Smith-Jones,01200,2026-03-05,16:19,Out
+Pat Smith-Jones,01200,2026-03-06,07:23,In
+Pat Smith-Jones,01200,2026-03-06,12:37,Meal Out
+Pat Smith-Jones,01200,2026-03-06,12:58,Meal In
+Pat Smith-Jones,01200,2026-03-06,16:37,Out
+Pat Smith-Jones,01200,2026-03-09,07:30,In
+Pat Smith-Jones,01200,2026-03-09,11:30,Meal Out
+Pat Smith-Jones,01200,2026-03-09,12:01,Meal In
+Pat Smith-Jones,01200,2026-03-09,16:00,Out
+Pat Smith-Jones,01200,2026-03-10,07:37,In
+Pat Smith-Jones,01200,2026-03-10,12:14,Meal Out
+Pat Smith-Jones,01200,2026-03-10,12:44,Meal In
+Pat Smith-Jones,01200,2026-03-10,16:18,Out
+Pat Smith-Jones,01200,2026-03-11,07:44,In
+Pat Smith-Jones,01200,2026-03-11,13:14,Out
+Pat Smith-Jones,01200,2026-03-12,07:51,In
+Pat Smith-Jones,01200,2026-03-12,11:51,Meal Out
+Pat Smith-Jones,01200,2026-03-12,12:12,Meal In
+Pat Smith-Jones,01200,2026-03-12,16:54,Out
+Pat Smith-Jones,01200,2026-03-13,07:58,In
+Pat Smith-Jones,01200,2026-03-13,12:35,Meal Out
+Pat Smith-Jones,01200,2026-03-13,13:06,Meal In
+Pat Smith-Jones,01200,2026-03-13,17:12,Out

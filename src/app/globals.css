@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+html { -webkit-font-smoothing: antialiased; }
+body { @apply bg-paper text-ink; font-variant-numeric: tabular-nums; }
+:focus-visible { outline: 3px solid #F2CF3D; outline-offset: 2px; }
+a { @apply text-ledger; }
+
+.tbl { @apply w-full text-sm border-collapse; }
+.tbl th { @apply text-left font-semibold text-ink-2 text-xs bg-[#E9EEE8] px-3 py-2 border-b border-line whitespace-nowrap; }
+.tbl td { @apply px-3 py-2 border-b border-line align-top; }
+.tbl tr:last-child td { @apply border-b-0; }
+.tbl td.n, .tbl th.n { @apply text-right whitespace-nowrap; }
+.tbl tbody tr.row-link:hover { @apply bg-[#EEF2ED] cursor-pointer; }
+
+.doc { @apply bg-white text-black px-10 py-8 leading-relaxed text-[15px] font-serif; }
+.doc h2.doc-title { @apply text-center font-bold text-lg mb-4; }
+.doc h3 { @apply font-bold mt-4 mb-2; }
+.doc p { @apply mb-3 whitespace-pre-line; }
+.doc ul { @apply list-disc pl-6 mb-3; }
+.doc .doc-notice { @apply border-y border-black py-2 font-bold; }
+.doc .doc-table { @apply w-full border-collapse my-3 text-sm; }
+.doc .doc-table th, .doc .doc-table td { @apply border border-gray-400 px-2 py-1 text-left; }
+.doc .doc-draft { @apply text-red-700 text-xs mb-4; }
+.doc .doc-sig { @apply mt-8; }
+hr.doc-break { @apply my-8 border-dashed; }
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; }
+  .print-break { break-before: page; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }

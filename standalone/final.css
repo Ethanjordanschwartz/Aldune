@@ -1,0 +1,15 @@
+/* Final word on the sidebar: placed after every script so nothing injected earlier can repaint it */
+/* sidebar: soft "brown bear" camel — clearly its own panel, with dark text, the umber logo, and orange accents all legible */
+.rail{background:linear-gradient(180deg,#E6D6C6 0%,#DDCAB8 100%)!important;border-right:1px solid #CDB8A3!important;--brand:#6B3F2A;--rail-ink2:#2E241E;--rail-ink3:#4A392E;--rail-hover:rgba(255,250,242,.38);--rail-active:#FBF6EE}
+.rail .nav button,.rail .nav a{color:#221A15!important;font-weight:550!important}
+.rail .nav button .al-ico,.rail .nav button svg{color:#3E3027!important;opacity:1!important}
+.rail .nav button:hover{background:var(--rail-hover)!important}
+.rail .nav button[aria-current="page"]{background:var(--rail-active)!important;box-shadow:inset 3px 0 0 var(--clay),0 1px 3px rgba(58,47,40,.12)!important;color:#221A15!important;font-weight:600}
+.rail .nav button[aria-current="page"] .al-ico{color:var(--clay)!important}
+.rail .nav .sec,.rail .nav summary,.rail .nav h4,.rail .nav .grp{color:#4A392E!important;opacity:1!important}
+.rail .brand b{color:#6B3F2A!important}.rail .al-mark path,.rail .brand svg path{fill:#6B3F2A!important}.rail .al-mark circle,.rail .brand svg circle{fill:#C4693F!important}
+.rail .al-tagline{color:#3E3027!important}.rail .al-tagline em{color:#9C4A26!important;font-weight:700}
+.rail .al-ws,.rail #nav-q{background-color:#FBF6EE!important;border-color:#C9AD8C!important;color:#221A15!important}
+.rail #nav-q::placeholder{color:#7A6555!important}
+.rail .foot,.rail .foot *{color:#2E241E!important}
+.rail .chip,.rail .count,.rail .nav .n{background:rgba(255,250,242,.55)!important;color:#2E241E!important;border-color:transparent!important}

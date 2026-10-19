@@ -1,0 +1,44 @@
+[
+ {
+  "file": "stub_0.pdf",
+  "name": "Maria Garcia",
+  "id": "00123",
+  "regHours": 80.0,
+  "regRate": 18.5,
+  "otHours": 2.5,
+  "dtHours": 0,
+  "premiumHours": 1.0,
+  "gross": 1567.88,
+  "periodStart": "2026-03-01",
+  "periodEnd": "2026-03-14",
+  "payDate": "2026-03-20"
+ },
+ {
+  "file": "stub_1.pdf",
+  "name": "John O'Neil",
+  "id": "00456",
+  "regHours": 76.0,
+  "regRate": 17.4,
+  "otHours": 0,
+  "dtHours": 0,
+  "premiumHours": 0,
+  "gross": 1322.4,
+  "periodStart": "2026-03-01",
+  "periodEnd": "2026-03-14",
+  "payDate": "2026-03-20"
+ },
+ {
+  "file": "stub_2.pdf",
+  "name": "Anh Le",
+  "id": "00789",
+  "regHours": 80.0,
+  "regRate": 19.0,
+  "otHours": 4.25,
+  "dtHours": 1.0,
+  "premiumHours": 0,
+  "gross": 1679.12,
+  "periodStart": "2026-03-01",
+  "periodEnd": "2026-03-14",
+  "payDate": "2026-03-20"
+ }
+]

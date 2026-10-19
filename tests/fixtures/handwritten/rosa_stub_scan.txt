@@ -1,0 +1,7 @@
+ACME PACKING INC          EARNINGS STATEMENT
+Employee: Rosa Diaz      ID: 10422
+Pay Period: O3/01/2026 - 03/14/2O26     Pay Date: 03/20/2026
+Earnings        Rate      Hours     This Period    YTD
+Regular         2O.OO     8O.OO     1,6OO.OO       9,6OO.OO
+Overtime        3O.OO     4.5O      135.0O         4O5.OO
+Gross Pay                           $1 ,735.OO

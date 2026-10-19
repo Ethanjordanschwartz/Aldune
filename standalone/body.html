@@ -1,0 +1,76 @@
+<body>
+<div class="app">
+  <aside class="rail" aria-label="Aldune navigation">
+    <div class="brand">
+      <svg class="al-mark" width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><path d="M3 25C9.5 25 12 13.5 18.5 13.5C23.5 13.5 25 19.5 29 19.5V25Z" fill="currentColor"/><circle cx="23.5" cy="8.5" r="3" fill="#C4693F"/></svg>
+      <b>Aldune</b>
+    </div>
+    <small>California wage &amp; hour intelligence</small>
+    <nav class="nav" id="nav">
+      <div class="nav-group">Start</div>
+      <button data-view="home">Home</button>
+      <button data-view="import">Import data</button>
+      <button data-view="connect">Connections</button>
+      <div class="nav-group">Results</div>
+      <button data-view="exec">Executive dashboard</button>
+      <button data-view="findings">Findings <span class="count" id="c-f"></span></button>
+      <button data-view="scorecard">Compliance scorecard</button>
+      <button data-view="paga">PAGA exposure</button>
+      <div class="nav-group">Fix</div>
+      <button data-view="fixqueue">Fix queue</button>
+      <button data-view="solutions">Solutions Center</button>
+      <button data-view="backpay">Back-pay planner</button>
+      <button data-view="readiness">PAGA readiness</button>
+      <button data-view="documents">Letters and packets</button>
+      <div class="nav-group">Legal</div>
+      <button data-view="litigation">Litigation</button>
+      <button data-view="settlement">Settlement valuation</button>
+      <button data-view="diligence">M&amp;A due diligence</button>
+      <button data-view="agency">Agency &amp; records requests</button>
+      <button data-view="privilege">Privileged audits</button>
+      <div class="nav-group">Monitor</div>
+      <button data-view="monitor">Monitoring and alerts</button>
+      <button data-view="calendar">Compliance calendar</button>
+      <button data-view="portfolio">Portfolio</button>
+      <div class="nav-group">More tools</div>
+      <button data-view="explorer">Risk Explorer</button>
+      <button data-view="detective">PAGA Detective</button>
+      <button data-view="payequity">Pay equity</button>
+      <button data-view="classify">Worker classification</button>
+      <button data-view="workers">Workers and timecards</button>
+      <button data-view="scenarios">Scenario model</button>
+      <button data-view="prevent">Prevention</button>
+      <button data-view="handbook2">Living handbook</button>
+      <button data-view="pos">POS &amp; timekeeping</button>
+      <button data-view="notices">Notices &amp; postings</button>
+      <button data-view="quality">Data quality</button>
+      <button data-view="remediation">Remediation center</button>
+      <button data-view="reports">Reports</button>
+      <button data-view="review">Review documents</button>
+      <button data-view="attest">Shift attestation</button>
+      <button data-view="steps">Reasonable steps</button>
+      <button data-view="trail">Audit trail</button>
+      <button data-view="rules">Rule registry</button>
+      <button data-view="method">Methodology and settings</button>
+      <button data-view="law">Law library</button>
+      <button data-view="ask">Ask Penny</button>
+      <div class="nav-group">Account</div>
+      <button data-view="account">My account</button>
+      <button data-view="plans">Plans and billing</button>
+      <button data-view="aiset">Penny AI</button>
+      <button data-view="admin" hidden>Admin console</button>
+    </nav>
+    <div class="foot"><div id="rail-co"></div><div>Rules current as of October 2026. <button id="theme-btn" type="button">Switch theme</button></div></div>
+  </aside>
+  <main id="main">
+    <div id="views"></div>
+    <p class="disclaimer">Aldune is software that performs preliminary analysis of data you supply. It is not legal advice and does not determine that any violation occurred. Estimates depend on your records and the assumptions shown. Have qualified California employment counsel review findings, models, and every document before relying on them.</p>
+  </main>
+</div>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-labelledby="drawer-title">
+  <header><div><h2 id="drawer-title"></h2><div id="drawer-sub" class="muted small"></div></div><button class="btn" id="drawer-close" type="button">Close</button></header>
+  <div class="body" id="drawer-body"></div>
+</aside>
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-live="polite"><div class="box"><b id="ov-title">Working</b><p id="ov-msg" class="muted small" style="margin-top:6px"></p></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>

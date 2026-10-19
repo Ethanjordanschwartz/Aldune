@@ -1,0 +1,11 @@
+node_modules
+.next
+.env
+.env.local
+coverage
+*.tsbuildinfo
+dist
+standalone/engine.js
+__pycache__
+
+.DS_Store

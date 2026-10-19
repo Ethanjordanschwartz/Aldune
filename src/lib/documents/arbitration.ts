@@ -1,0 +1,43 @@
+// Arbitration-agreement analyzer (spec Vol. II Part 20): waivers, severability vs. poison pill, delegation, and
+// Armendariz/unconscionability markers → where each claim type goes and how exposure should be re-scoped.
+export interface ArbFinding { id: string; label: string; severity: 'high' | 'medium' | 'low' | 'info'; detail: string; cite: string }
+const near = (t: string, a: RegExp, b: RegExp, w = 400) => { const re = new RegExp(a.source, 'gi'); let m; while ((m = re.exec(t))) { const win = t.slice(Math.max(0, m.index - w), m.index + w); if (b.test(win)) return true; } return false; };
+export function analyzeArbitration(raw: string) {
+  const t = raw.replace(/\s+/g, ' '); const f: ArbFinding[] = [];
+  const classWaiver = /class action waiver|class or collective|class member in any purported class|on a class(?:-wide)? basis/i.test(t);
+  const repWaiver = near(t, /representative (?:proceeding|action|claim)|private attorneys general/, /(?:waive|may not|shall not|no party may|neither party may|not as a)/i);
+  const savings = /except to the extent (?:that )?(?:this provision is )?(?:unenforceable|prohibited)|to the (?:fullest )?extent permitted by (?:applicable )?law/i.test(t) && repWaiver;
+  const nonSev = /non-?severable|material and essential|shall not be severed/i.test(t);
+  const limited = /null and void (?:only )?with respect to (?:such|that) (?:proceeding|claim)/i.test(t);
+  const wholeVoid = nonSev && /agreement to arbitrate shall be (?:null and void|unenforceable)|entire (?:arbitration )?agreement (?:shall be|is) (?:null|void|unenforceable)/i.test(t) && !limited;
+  const delegation = near(t, /arbitrator/, /(?:exclusive authority|shall decide|shall determine).{0,160}(?:enforceab|validity|arbitrab|formation)/i, 300);
+  const courtDecidesWaiver = /(?:waiver|class action waiver).{0,120}(?:determined only by a court|only by a court)/i.test(t);
+  const faa = /federal arbitration act/i.test(t);
+  const shortLimit = /within (?:one|1|six|6|ninety|90|180)\s*(?:\(\d+\)\s*)?(?:year|month|day)s?.{0,120}(?:forever barred|waived|after the (?:dispute|claim) arises)/i.test(t) || /(?:forever barred).{0,80}within (?:one|1)\s*(?:\(\d+\)\s*)?year/i.test(t);
+  const empPaysFees = /(?:you|employee) (?:will be|are|is|shall be) responsible for (?:the )?(?:filing fee|your one[- ]half|one[- ]half|half)|split (?:the )?(?:costs|fees) of (?:the )?arbitrat|each party shall (?:pay|bear) (?:one[- ]half|half|its own share) of the arbitrat/i.test(t);
+  const carveOut = /injunctive relief|intellectual property|trade secrets?/i.test(t) && /(?:exception|notwithstanding|excluded|except)/i.test(t);
+  const unilateral = /(?:may|reserves the right to) (?:modify|amend|change|terminate) (?:this|the) (?:agreement|section|policy).{0,80}(?:at any time|sole discretion|without notice)|changes to this section/i.test(t);
+  const discoveryLimit = /(?:limited discovery|no discovery|depositions? (?:shall be )?limited|not (?:to )?exceed (?:one|two|three|\d) depositions?)/i.test(t);
+  const optOut = /opt[- ]out/i.test(t);
+  const condition = /condition (?:of|to) (?:employment|initiating)|good faith negotiations shall be a condition/i.test(t);
+  const add = (id: string, label: string, severity: ArbFinding['severity'], detail: string, cite: string) => f.push({ id, label, severity, detail, cite });
+  if (classWaiver) add('class_waiver', 'Class-action waiver', 'info', 'Generally enforceable under the FAA; employees who signed cannot be class members for arbitrable claims.', 'Epic Systems Corp. v. Lewis (2018) 584 U.S. 497; Viking River (2022) 596 U.S. 639');
+  if (repWaiver) add('rep_waiver', 'Representative (PAGA) waiver', savings ? 'low' : 'high', savings ? 'Includes a savings clause (“except to the extent unenforceable”), so the unenforceable part — the waiver of non-individual PAGA claims — can be disregarded.' : 'A wholesale waiver of representative PAGA standing in every forum is unenforceable (Iskanian rule preserved by Viking River).', 'Viking River (2022) 596 U.S. 639; Adolph v. Uber (2023) 14 Cal.5th 1104');
+  if (wholeVoid) add('poison_pill', 'Non-severable “poison pill”', 'high', 'If the representative waiver fails, the clause voids the entire agreement to arbitrate — DeMarinis held such a clause renders the whole agreement unenforceable.', 'DeMarinis v. Heritage Bank of Commerce (2023) 98 Cal.App.5th 776');
+  else if (nonSev && limited) add('limited_nonsev', 'Non-severability limited to the affected proceeding', 'medium', 'If the waiver fails, arbitration is void only “with respect to such proceeding” — that proceeding (e.g., the representative PAGA claim) goes to court while individual arbitration continues.', 'DeMarinis (2023) 98 Cal.App.5th 776; Adolph (2023) 14 Cal.5th 1104');
+  if (delegation) add('delegation', 'Delegation clause', courtDecidesWaiver ? 'medium' : 'info', courtDecidesWaiver ? 'Delegates enforceability to the arbitrator but reserves the class-waiver question to a court — the conflict will itself be litigated.' : 'Gateway questions of enforceability are delegated to the arbitrator if the delegation is clear and unmistakable.', 'Rent-A-Center, West, Inc. v. Jackson (2010) 561 U.S. 63');
+  if (empPaysFees) add('fees', 'Employee bears arbitration costs', 'high', 'Mandatory employment arbitration must not require the employee to pay costs unique to arbitration; a fee-splitting term is substantively unconscionable.', 'Armendariz v. Foundation Health Psychcare Services (2000) 24 Cal.4th 83');
+  if (shortLimit) add('short_limit', 'Shortened limitations period', 'high', 'Shortening the time to bring statutory wage claims (e.g., to one year instead of three or four) deprives employees of statutory remedies and supports unconscionability.', 'Armendariz (2000) 24 Cal.4th 83');
+  if (carveOut) add('carve_out', 'One-sided carve-outs (injunctive relief / IP / trade secrets)', 'medium', 'Exempting claims employers typically bring while requiring employees to arbitrate theirs undermines mutuality.', 'Armendariz (2000) 24 Cal.4th 83');
+  if (unilateral) add('unilateral', 'Employer may change the terms', 'medium', 'Unilateral modification rights weigh toward unconscionability unless limited by notice and the implied covenant.', 'Armendariz (2000) 24 Cal.4th 83');
+  if (discoveryLimit) add('discovery', 'Limited discovery', 'medium', 'Employees are entitled to discovery sufficient to vindicate statutory claims.', 'Armendariz (2000) 24 Cal.4th 83');
+  if (condition) add('precondition', 'Pre-arbitration conditions', 'low', 'Mandatory informal-resolution periods can delay claims; courts review them for fairness.', 'Armendariz (2000) 24 Cal.4th 83');
+  if (optOut) add('opt_out', 'Opt-out right', 'info', 'A meaningful opt-out window reduces procedural unconscionability.', 'Circuit City Stores v. Ahmed (9th Cir. 2002) 283 F.3d 1198');
+  if (faa) add('faa', 'Governed by the Federal Arbitration Act', 'info', 'Requiring arbitration as a condition of employment is not itself unlawful — the FAA preempts AB 51.', 'Chamber of Commerce v. Bonta (9th Cir. 2023) 62 F.4th 473');
+  add('fee_deadline', 'Arbitration fee deadline', 'info', 'The employer must pay arbitration fees within 30 days of the due date or it is in material breach and the employee may proceed in court.', 'Code Civ. Proc. §§ 1281.97–1281.98');
+  const substantive = f.filter(x => ['fees', 'short_limit', 'carve_out', 'unilateral', 'discovery'].includes(x.id) && x.severity !== 'low').length;
+  const overall = wholeVoid && repWaiver && !savings ? 'likely void' : substantive >= 2 ? 'enforceability at risk' : 'likely enforceable';
+  return { findings: f, overall: overall as 'likely void' | 'enforceability at risk' | 'likely enforceable', unconscionabilityMarkers: substantive,
+    routing: { individualClaims: overall === 'likely void' ? 'court' : 'arbitration (individually)', classClaims: overall === 'likely void' ? 'court (class action available)' : classWaiver ? 'barred for signers (individual arbitration)' : 'court', individualPaga: overall === 'likely void' ? 'court' : 'arbitration (Viking River)', nonIndividualPaga: overall === 'likely void' ? 'court' : 'court — stayed pending the individual arbitration (Adolph)' },
+    exposureEffect: overall === 'likely void' ? 'Treat signers as class members: do not exclude them from class exposure.' : overall === 'enforceability at risk' ? `Unconscionability markers (${substantive}) make enforcement uncertain — model arbitration exclusion at a discount rather than 100%.` : 'Exclude signers from class claims; PAGA exposure is unchanged because non-individual PAGA claims stay in court.' };
+}

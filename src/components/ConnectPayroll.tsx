@@ -1,0 +1,16 @@
+'use client';
+import { useState } from 'react';
+export function ConnectPayroll({ orgId, orgName, connected, lastSync, canManage }: { orgId: string; orgName: string; connected: boolean; lastSync: string | null; canManage: boolean }) {
+  const [busy, setBusy] = useState(''); const [msg, setMsg] = useState(''); const [pull, setPull] = useState<{ employees: unknown[]; payroll: unknown[]; time: unknown[]; notes: string[] } | null>(null);
+  const connect = async () => { setBusy('connect'); setMsg(''); try { window.localStorage.setItem('paycure:connect-org', orgId); } catch { /* ignore */ } const r = await fetch('/api/connectors/finch/session', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ orgId, orgName }) }); const j = await r.json(); if (!r.ok) { setMsg(j.error || 'Could not start the connection.'); setBusy(''); return; } window.location.href = j.connectUrl; };
+  const sync = async () => { setBusy('sync'); setMsg(''); const to = new Date().toISOString().slice(0, 10); const from = new Date(Date.now() - 365 * 864e5).toISOString().slice(0, 10); const r = await fetch('/api/connectors/finch/sync', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ orgId, from, to }) }); const j = await r.json(); setBusy(''); if (!r.ok) { setMsg(j.error || 'Sync failed.'); return; } setPull(j); };
+  const csv = (rows: Record<string, unknown>[], name: string) => { if (!rows.length) return; const h = Object.keys(rows[0]); const body = [h.join(','), ...rows.map(r => h.map(k => JSON.stringify(r[k] ?? '')).join(','))].join('\n'); const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([body], { type: 'text/csv' })); a.download = name; a.click(); };
+  return (<div className="rounded-xl border border-[#DCCFBA] bg-white p-6">
+    <h2 className="text-lg font-bold">Payroll system</h2>
+    <p className="text-sm text-ink-2 mt-1">Connect ADP, Paychex, Gusto, UKG, Paylocity, Rippling, and 200+ more through a secure login — no exports or downloads. Aldune reads employee and pay-statement data (read-only).</p>
+    <p className="text-sm mt-2">{connected ? `Connected${lastSync ? ` · last sync ${new Date(lastSync).toLocaleString()}` : ''}` : 'Not connected'}</p>
+    <div className="flex gap-2 mt-4">{canManage && <button className="rounded bg-ledger text-white px-4 py-2 font-semibold" disabled={!!busy} onClick={connect}>{connected ? 'Reconnect' : 'Connect your payroll'}</button>}{connected && <button className="rounded border px-4 py-2" disabled={!!busy} onClick={sync}>{busy === 'sync' ? 'Syncing…' : 'Sync last 12 months'}</button>}</div>
+    {msg && <p className="text-sm text-risk-high mt-3">{msg}</p>}
+    {pull && <div className="mt-4 text-sm"><p><b>{pull.employees.length}</b> workers and <b>{pull.payroll.length}</b> pay-statement rows retrieved. {pull.notes.join(' ')}</p><div className="flex gap-2 mt-2"><button className="rounded border px-3 py-1" onClick={() => csv(pull.employees as Record<string, unknown>[], 'census.csv')}>Census CSV</button><button className="rounded border px-3 py-1" onClick={() => csv(pull.payroll as Record<string, unknown>[], 'payroll.csv')}>Payroll CSV</button><a className="rounded bg-ledger text-white px-3 py-1 no-underline" href="/audits/new">Start an audit with these records →</a></div></div>}
+  </div>);
+}
