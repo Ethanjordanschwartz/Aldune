@@ -8,7 +8,9 @@ Aldune turns a California wage-and-hour and PAGA audit into a workflow you can r
 
 The organizing principle: **AI reads and explains, versioned rules decide, and a person confirms.**
 
-**[Try the live demo →](https://ethanjordanschwartz.github.io/Aldune/demo/)** (or download [`demo/index.html`](demo/index.html) and open it in any browser). The demo is one HTML file that runs entirely in your browser; nothing is uploaded. To get full access, sign in with `demo@aldune.dev` / `AlduneDemo2026`, then click **Load demo company**. All data in the demo is fictional.
+**[▶ Open the live demo](https://ethanjordanschwartz.github.io/Aldune/demo/tour.html)** — opens straight into a fictional 200-worker sample company. No sign-in needed, and it runs entirely in your browser (nothing is uploaded).
+
+<sub>Want the full app with sign-in? Use the [full demo](https://ethanjordanschwartz.github.io/Aldune/demo/) and sign in with `demo@aldune.dev` / `AlduneDemo2026`, then click **Load demo company**.</sub>
 
 ---
 
